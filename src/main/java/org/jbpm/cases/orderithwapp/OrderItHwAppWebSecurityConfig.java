@@ -39,14 +39,14 @@ public class OrderItHwAppWebSecurityConfig extends WebSecurityConfigurerAdapter 
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication().withUser("kieserver").password("kieserver1!").roles("kie-server");
-        auth.inMemoryAuthentication().withUser("adminUser").password("test1234!").roles("kie-server");
-        auth.inMemoryAuthentication().withUser("executionUser").password("test1234!").roles("kie-server");
+        auth.inMemoryAuthentication().withUser("kieserver").password("{noop}kieserver1!").roles("kie-server");
+        auth.inMemoryAuthentication().withUser("adminUser").password("{noop}test1234!").roles("kie-server");
+        auth.inMemoryAuthentication().withUser("executionUser").password("{noop}test1234!").roles("kie-server");
         
-        auth.inMemoryAuthentication().withUser("maciek").password("maciek1!").roles("employees");
-        auth.inMemoryAuthentication().withUser("tihomir").password("tihomir1!").roles("employees", "apple", "dell", "lenovo", "other");
-        auth.inMemoryAuthentication().withUser("krisv").password("krisv1!").roles("employees", "manager");
-        auth.inMemoryAuthentication().withUser("mary").password("mary1!").roles("employees", "manager");
-        auth.inMemoryAuthentication().withUser("paul").password("paul1!").roles("employees", "manager");
+        auth.inMemoryAuthentication().withUser("maciek").password("{noop}maciek1!").roles("employees");
+        auth.inMemoryAuthentication().withUser("tihomir").password("{noop}tihomir1!").roles("employees", "apple", "dell", "lenovo", "other");
+        auth.inMemoryAuthentication().withUser("krisv").password("{noop}krisv1!").roles("employees", "manager");
+        auth.inMemoryAuthentication().withUser("mary").password("{noop}mary1!").roles("employees", "manager");
+        auth.inMemoryAuthentication().withUser("paul").password("{noop}paul1!").roles("employees", "manager");
     }
 }
